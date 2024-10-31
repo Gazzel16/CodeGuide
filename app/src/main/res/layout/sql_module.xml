@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#424242"
+    tools:context=".SqlModuleActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center"> <!-- Centering the content -->
+
+            <!-- Card 1 - SQL Basics -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="332dp"
+                android:layout_height="224dp"
+                android:backgroundTint="#357ABD"
+                android:layout_marginTop="30dp"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="16dp"> <!-- Added margin for spacing -->
+
+                <TextView
+                    android:id="@+id/sqlBasicsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="20dp"
+                    android:text="SQL Basics"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sqlBasicsPoint1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="60dp"
+                    android:text="1. SQL stands for Structured Query Language."
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:id="@+id/sqlBasicsPoint2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="110dp"
+                    android:text="2. It is used to manage and manipulate databases."
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:id="@+id/sqlBasicsPoint3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="160dp"
+                    android:text="3. SQL allows querying, inserting, updating, and deleting data."
+                    android:textColor="@color/colorWhite" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 2 - SQL Data Types -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="332dp"
+                android:layout_height="224dp"
+                android:backgroundTint="#FFA726"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="16dp"> <!-- Added margin for spacing -->
+
+                <TextView
+                    android:id="@+id/sqlDataTypesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="20dp"
+                    android:text="SQL Data Types"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sqlDataTypesPoint1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="60dp"
+                    android:text="1. SQL supports various data types, such as INT, VARCHAR."
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:id="@+id/sqlDataTypesPoint2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="110dp"
+                    android:text="2. Different data types are used to store various forms of data."
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:id="@+id/sqlDataTypesPoint3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="160dp"
+                    android:text="3. Choosing the right data type is essential for optimization."
+                    android:textColor="@color/colorWhite" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 3 - SQL Commands -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="332dp"
+                android:layout_height="224dp"
+                android:backgroundTint="#4CAF50"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="16dp"> <!-- Added margin for spacing -->
+
+                <TextView
+                    android:id="@+id/sqlCommandsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="20dp"
+                    android:text="SQL Commands"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sqlCommandsPoint1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="60dp"
+                    android:text="1. DDL (Data Definition Language): CREATE, DROP, ALTER."
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:id="@+id/sqlCommandsPoint2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="110dp"
+                    android:text="2. DML (Data Manipulation Language): SELECT, INSERT, UPDATE."
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:id="@+id/sqlCommandsPoint3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="160dp"
+                    android:text="3. DCL (Data Control Language): GRANT, REVOKE."
+                    android:textColor="@color/colorWhite" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Practice Button -->
+            <Button
+                android:id="@+id/practiceSQLBtn"
+                android:layout_width="164dp"
+                android:layout_height="45dp"
+                android:background="#36454F"
+                android:text="Try SQL"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+            android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#424242"
+    tools:context=".PythonModuleActivity">
+
+    <!-- Card 1 - Python Basics -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="332dp"
+        android:layout_height="224dp"
+        android:backgroundTint="#357ABD"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.088">
+
+        <TextView
+            android:id="@+id/pythonBasicsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="20dp"
+            android:text="Python Basics"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pythonBasicsPoint1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:text="1. Python is known for its readable and simple syntax."
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/pythonBasicsPoint2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="110dp"
+            android:text="2. It supports multiple programming paradigms, including OOP."
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/pythonBasicsPoint3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="160dp"
+            android:text="3. Python is widely used in web development, data science, and AI."
+            android:textColor="@color/colorWhite" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Card 2 - Python Data Types -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="332dp"
+        android:layout_height="224dp"
+        android:backgroundTint="#FFA726"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.446">
+
+        <TextView
+            android:id="@+id/pythonDataTypesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="20dp"
+            android:text="Python Data Types"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pythonDataTypesPoint1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:text="1. Python supports several built-in data types."
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/pythonDataTypesPoint2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="110dp"
+            android:text="2. Lists, tuples, and dictionaries are popular Python collections."
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/pythonDataTypesPoint3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="160dp"
+            android:text="3. Dynamic typing allows variables to change types."
+            android:textColor="@color/colorWhite" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Card 3 - Python Libraries -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="332dp"
+        android:layout_height="224dp"
+        android:backgroundTint="#4CAF50"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.811">
+
+        <TextView
+            android:id="@+id/pythonLibrariesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="20dp"
+            android:text="Python Libraries"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pythonLibrariesPoint1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:text="1. Python has a rich ecosystem of libraries for various applications."
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/pythonLibrariesPoint2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="110dp"
+            android:text="2. Popular libraries include NumPy, Pandas, and TensorFlow."
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/pythonLibrariesPoint3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="160dp"
+            android:text="3. Libraries make it easier to perform complex tasks."
+            android:textColor="@color/colorWhite" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Practice Button -->
+    <Button
+        android:id="@+id/practicePythonBtn"
+        android:layout_width="164dp"
+        android:layout_height="45dp"
+        android:background="#36454F"
+        android:text="Try Python"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

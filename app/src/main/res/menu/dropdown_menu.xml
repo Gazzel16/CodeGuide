@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_html"
+        android:title="HTML" />
+    <item
+        android:id="@+id/menu_css"
+        android:title="CSS" />
+    <item
+        android:id="@+id/menu_js"
+        android:title="JavaScript" />
+    <item
+        android:id="@+id/menu_python"
+        android:title="Python" />
+    <item
+        android:id="@+id/menu_sql"
+        android:title="SQL" />
+
+</menu>
