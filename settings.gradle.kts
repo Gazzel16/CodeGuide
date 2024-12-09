@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "w3school"
+rootProject.name = "CodeGuide"
 include(":app")
  

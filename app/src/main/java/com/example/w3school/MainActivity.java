@@ -42,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         Intent intent;
 
+        if (itemId == R.id.logout){
+            intent = new Intent (this, login.class);
+            startActivity(intent);
+        }
+
         if (itemId == R.id.menu_html) {
             intent = new Intent(this, HtmlActivity.class);
             startActivity(intent);

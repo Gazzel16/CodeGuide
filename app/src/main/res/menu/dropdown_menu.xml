@@ -16,5 +16,8 @@
     <item
         android:id="@+id/menu_sql"
         android:title="SQL" />
+    <item
+        android:id="@+id/logout"
+        android:title="Logout" />
 
 </menu>

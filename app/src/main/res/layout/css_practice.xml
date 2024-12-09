@@ -20,6 +20,7 @@
 
             <!-- Question 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView1"
                 android:layout_width="323dp"
                 android:layout_height="172dp"
                 android:layout_gravity="center_horizontal"
@@ -55,6 +56,7 @@
 
             <!-- Question 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
                 android:layout_width="323dp"
                 android:layout_height="172dp"
                 android:backgroundTint="#2C3539"
@@ -90,6 +92,7 @@
 
             <!-- Question 3 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
                 android:layout_width="323dp"
                 android:layout_height="172dp"
                 android:backgroundTint="#2C3539"
@@ -125,6 +128,7 @@
 
             <!-- Question 4 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
                 android:layout_width="323dp"
                 android:layout_height="172dp"
                 android:backgroundTint="#2C3539"
@@ -160,6 +164,7 @@
 
             <!-- Question 5 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView5"
                 android:layout_width="323dp"
                 android:layout_height="172dp"
                 android:backgroundTint="#2C3539"
@@ -195,17 +200,23 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <Button
-                android:id="@+id/btn"
-                android:layout_width="wrap_content"
+                android:id="@+id/submitbtn"
+                android:layout_width="301dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
+                android:layout_marginLeft="20dp"
                 android:backgroundTint="#388E3C"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
                 android:layout_marginTop="5dp"
-                android:text="Try Other Languange" />
+                android:text="Submit" />
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="301dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="50dp"
+                android:text="try other language" />
 
         </LinearLayout>
     </ScrollView>

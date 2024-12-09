@@ -63,4 +63,6 @@
     <color name="dark_olive_green">#556B2F</color>
     <color name="slate_blue">#6A5ACD</color>
     <color name="dark_purple">#4B0082</color>
+
+    <color name="dark_green">#0EA40E</color>
 </resources>

@@ -1,74 +1,149 @@
 package com.example.w3school;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 public class HtmlPracticeActivity extends AppCompatActivity {
 
-    private Button question1btn1, question1btn2, btn;
+    private Button submitBtn;
+    private int score = 0;
+
+    // Track selected buttons for each CardView
+    private Button selectedButton1 = null;
+    private Button selectedButton2 = null;
+    private Button selectedButton3 = null;
+    private Button selectedButton4 = null;
+    private Button selectedButton5 = null;
+
+    // Track selected answers
+    private String answer1 = "", answer2 = "", answer3 = "", answer4 = "", answer5 = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.html_practice);
 
-        // Initialize buttons with findViewById
-        question1btn1 = findViewById(R.id.question1btn1);
-        question1btn2 = findViewById(R.id.question1btn2);
-        btn = findViewById(R.id.btn);
+        submitBtn = findViewById(R.id.submitbtn);
+
+        // Initialize and set click listeners for answer buttons
+        findViewById(R.id.question1btn1).setOnClickListener(this::onAnswerSelected);
+        findViewById(R.id.question1btn2).setOnClickListener(this::onAnswerSelected);
+        findViewById(R.id.question2btn1).setOnClickListener(this::onAnswerSelected);
+        findViewById(R.id.question2btn2).setOnClickListener(this::onAnswerSelected);
+        findViewById(R.id.question3btn1).setOnClickListener(this::onAnswerSelected);
+        findViewById(R.id.question3btn2).setOnClickListener(this::onAnswerSelected);
+        findViewById(R.id.question4btn1).setOnClickListener(this::onAnswerSelected);
+        findViewById(R.id.question4btn2).setOnClickListener(this::onAnswerSelected);
+        findViewById(R.id.question5btn1).setOnClickListener(this::onAnswerSelected);
+        findViewById(R.id.question5btn2).setOnClickListener(this::onAnswerSelected);
+
+        Button btn = findViewById(R.id.btn);
 
         btn.setOnClickListener(view ->{
-            Intent intent = new Intent(HtmlPracticeActivity.this, MainActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
 
-        // Set up OnClickListener for the correct answer button
-        question1btn1.setOnClickListener(new View.OnClickListener() {
+        submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCustomDialog("Congratulations!", "You got the answer right!");
-            }
-        });
-
-        // Set up OnClickListener for the incorrect answer button
-        question1btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showCustomDialog("Result:", "Wrong answer! try again");
+                calculateScore();
+                showResultDialog();
+                resetActivity();  // Reset after submission
             }
         });
     }
 
-    private void showCustomDialog(String title, String message) {
-        View dialogView = getLayoutInflater().inflate(R.layout.dialog_custom, null);
-        AlertDialog.Builder builder = new AlertDialog.Builder(HtmlPracticeActivity.this);
-        builder.setView(dialogView);
+    public void onAnswerSelected(View view) {
+        Button clickedButton = (Button) view;
 
-        AlertDialog alertDialog = builder.create();
+        // Determine which question this button belongs to using if-else
+        if (clickedButton.getId() == R.id.question1btn1 || clickedButton.getId() == R.id.question1btn2) {
+            resetPreviousButton(selectedButton1);
+            selectedButton1 = clickedButton;
+            answer1 = clickedButton.getText().toString();
+        } else if (clickedButton.getId() == R.id.question2btn1 || clickedButton.getId() == R.id.question2btn2) {
+            resetPreviousButton(selectedButton2);
+            selectedButton2 = clickedButton;
+            answer2 = clickedButton.getText().toString();
+        } else if (clickedButton.getId() == R.id.question3btn1 || clickedButton.getId() == R.id.question3btn2) {
+            resetPreviousButton(selectedButton3);
+            selectedButton3 = clickedButton;
+            answer3 = clickedButton.getText().toString();
+        } else if (clickedButton.getId() == R.id.question4btn1 || clickedButton.getId() == R.id.question4btn2) {
+            resetPreviousButton(selectedButton4);
+            selectedButton4 = clickedButton;
+            answer4 = clickedButton.getText().toString();
+        } else if (clickedButton.getId() == R.id.question5btn1 || clickedButton.getId() == R.id.question5btn2) {
+            resetPreviousButton(selectedButton5);
+            selectedButton5 = clickedButton;
+            answer5 = clickedButton.getText().toString();
+        }
 
-        // Access elements within the custom layout
-        TextView dialogTitle = dialogView.findViewById(R.id.dialogTitle);
-        TextView dialogMessage = dialogView.findViewById(R.id.dialogMessage);
-        Button closeButton = dialogView.findViewById(R.id.closeButton);
+        // Highlight the clicked button
+        clickedButton.setBackgroundColor(Color.GREEN);
+    }
 
-        // Set dialog title and message
-        dialogTitle.setText(title);
-        dialogMessage.setText(message);
+    private void resetPreviousButton(Button previousButton) {
+        if (previousButton != null) {
+            previousButton.setBackgroundColor(getResources().getColor(android.R.color.darker_gray)); // Reset to default color
+        }
+    }
 
-        // Close the dialog on button click
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alertDialog.dismiss();
-            }
-        });
+    private void calculateScore() {
+        score = 0;
+        if (answer1.equals("<!DOCTYPE html>")) score++;
+        if (answer2.equals("<html>")) score++;
+        if (answer3.equals("<body>")) score++;
+        if (answer4.equals("<Head>")) score++;
+        if (answer5.equals("<title>")) score++;
+    }
 
-        alertDialog.show();
+    private void showResultDialog() {
+        StringBuilder resultMessage = new StringBuilder();
+        resultMessage.append("Your score: ").append(score).append("/5\n\n");
+        resultMessage.append("Correct Answers:\n");
+        resultMessage.append("1. <!DOCTYPE html>\n");
+        resultMessage.append("2. <html>\n");
+        resultMessage.append("3. <body>\n");
+        resultMessage.append("4. <Head>\n");
+        resultMessage.append("5. <title>");
+
+        new AlertDialog.Builder(this)
+                .setTitle("Quiz Results")
+                .setMessage(resultMessage.toString())
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
+    private void resetActivity() {
+        // Reset buttons' background colors using if-else
+        if (selectedButton1 != null) selectedButton1.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+        if (selectedButton2 != null) selectedButton2.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+        if (selectedButton3 != null) selectedButton3.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+        if (selectedButton4 != null) selectedButton4.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+        if (selectedButton5 != null) selectedButton5.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+
+        // Reset selected answers using if-else
+        if (!answer1.isEmpty()) answer1 = "";
+        if (!answer2.isEmpty()) answer2 = "";
+        if (!answer3.isEmpty()) answer3 = "";
+        if (!answer4.isEmpty()) answer4 = "";
+        if (!answer5.isEmpty()) answer5 = "";
+
+        // Optionally reset the score
+        score = 0;
     }
 }
