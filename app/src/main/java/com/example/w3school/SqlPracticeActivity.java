@@ -101,22 +101,22 @@ public class SqlPracticeActivity extends AppCompatActivity {
     private void calculateScore() {
         score = 0;
         // Check answers and increment score
-        if (answer1.equals("SELECT")) score++;
-        if (answer2.equals("WHERE")) score++;
-        if (answer3.equals("JOIN")) score++;
-        if (answer4.equals("INSERT")) score++;
-        if (answer5.equals("UPDATE")) score++;
+        if (answer1.equals("Structured Query Language")) score++;
+        if (answer2.equals("CREATE")) score++;
+        if (answer3.equals("SELECT")) score++;
+        if (answer4.equals("Data Manipulation Language")) score++;
+        if (answer5.equals("DROP")) score++;
     }
 
     private void showResultDialog() {
         StringBuilder resultMessage = new StringBuilder();
         resultMessage.append("Your score: ").append(score).append("/5\n\n");
         resultMessage.append("Correct Answers:\n");
-        resultMessage.append("1. SELECT\n");
-        resultMessage.append("2. WHERE\n");
-        resultMessage.append("3. JOIN\n");
-        resultMessage.append("4. INSERT\n");
-        resultMessage.append("5. UPDATE");
+        resultMessage.append("1. Structured Query Language\n");
+        resultMessage.append("2. CREATE\n");
+        resultMessage.append("3. SELECT\n");
+        resultMessage.append("4. Data Manipulation Language\n");
+        resultMessage.append("5. DROP");
 
         new AlertDialog.Builder(this)
                 .setTitle("Quiz Results")
@@ -129,6 +129,7 @@ public class SqlPracticeActivity extends AppCompatActivity {
                 })
                 .show();
     }
+
 
     private void resetActivity() {
         // Reset buttons' background colors using if-else

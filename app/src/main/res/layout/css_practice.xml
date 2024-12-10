@@ -204,7 +204,7 @@
                 android:id="@+id/submitbtn"
                 android:layout_width="301dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:backgroundTint="#388E3C"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
@@ -214,7 +214,7 @@
             <Button
                 android:id="@+id/btn"
                 android:layout_width="301dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_height="50dp"
                 android:text="try other language" />
 
